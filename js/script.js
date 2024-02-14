@@ -52,9 +52,9 @@ window.onload = function() {
         if (element) {
             console.log("hash 2: " + hash)
             var newScrollPosition = element.offsetTop;
+            window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
         }
 
-        window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
     }
 
     setTimeout(function() {
