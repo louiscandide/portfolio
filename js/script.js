@@ -49,16 +49,11 @@ window.onload = function() {
     if (hash) {
         var element = document.querySelector(hash);
 
-        if (hash === "#home") {
-            var newScrollPosition = -100;
-        } else if (element) {
+        if (element) {
             var newScrollPosition = element.offsetTop;
         }
 
-        window.scroll({
-            top: newScrollPosition,
-            left: 0
-        });
+        window.scrollTo(0, newScrollPosition);
     }
     setTimeout(function() {
         var url = window.location.href;
@@ -84,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop;
                 window.scrollTo({
-                    top: offsetTop
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         });
