@@ -54,7 +54,11 @@ window.onload = function() {
         } else if (element) {
             var newScrollPosition = element.offsetTop;
         }
-        window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
+
+        window.scroll({
+            top: newScrollPosition,
+            left: 0
+        });
     }
     setTimeout(function() {
         var url = window.location.href;
@@ -80,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop;
                 window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
+                    top: offsetTop
                 });
             }
         });
