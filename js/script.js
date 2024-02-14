@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 downloadLink.download = 'cv_louis-candide_richard.pdf';
                 downloadLink.click();
             } else {
-                console.log("targetId: " + targetId)
                 // Sinon, effectuez le défilement fluide
                 if (targetId === homeElement.id) {
                     window.scrollTo(0, homeElement.offsetTop - 100);
@@ -51,7 +50,6 @@ window.onload = function() {
         var element = document.querySelector(hash);
 
         if (element) {
-            console.log("hash: " + hash)
             var newScrollPosition = element.offsetTop;
         }
 
@@ -80,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (targetElement) {
                 const offsetTop = targetElement.offsetTop;
-                console.log("targetElement: " + targetElement)
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
