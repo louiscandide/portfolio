@@ -45,17 +45,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.onload = function() {
     var hash = window.location.hash;
-
+    console.log("hash 1: " + hash)
     if (hash) {
         var element = document.querySelector(hash);
 
         if (element) {
+            console.log("hash 2: " + hash)
             var newScrollPosition = element.offsetTop;
         }
 
         window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
     }
-    
+
+    setTimeout(function() {
+        var url = window.location.href;
+
+        if (url.indexOf('#') !== -1) {
+            var urlSansFragment = url.split('#')[0];
+
+            window.history.replaceState({}, document.title, urlSansFragment);
+        }
+    }, 1000);
 };
 
 document.addEventListener('DOMContentLoaded', function () {
