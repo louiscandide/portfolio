@@ -50,10 +50,10 @@ window.onload = function() {
         var element = document.querySelector(hash);
 
         if (element) {
-            var newScrollPosition = element.offsetTop -1000;
+            var newScrollPosition = element.offsetTop;
         }
 
-        window.scrollTo(0, newScrollPosition);
+        window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
     }
     setTimeout(function() {
         var url = window.location.href;
