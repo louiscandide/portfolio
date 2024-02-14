@@ -45,12 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.onload = function() {
     var hash = window.location.hash;
-    console.log("hash 1: " + hash)
+    
     if (hash) {
         var element = document.querySelector(hash);
 
         if (element) {
-            console.log("hash 2: " + hash)
             var newScrollPosition = element.offsetTop;
             window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
         }
