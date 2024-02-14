@@ -55,15 +55,7 @@ window.onload = function() {
 
         window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
     }
-    setTimeout(function() {
-        var url = window.location.href;
-
-        if (url.indexOf('#') !== -1) {
-            var urlSansFragment = url.split('#')[0];
-
-            window.history.replaceState({}, document.title, urlSansFragment);
-        }
-    }, 1000);
+    
 };
 
 document.addEventListener('DOMContentLoaded', function () {
