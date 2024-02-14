@@ -45,12 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.onload = function() {
     var hash = window.location.hash;
+    var dripDynastyElement = document.getElementById('drip-dynasty');
 
     if (hash) {
-        var element = document.querySelector(hash);
+        var element = hash.split('#')[1];
 
-        if (element) {
-            var newScrollPosition = element.offsetTop;
+        if (element === dripDynastyElement.id) {
+            window.scrollTo(0, dripDynastyElement.offsetTop);
         }
 
         window.scrollTo(0, newScrollPosition);
