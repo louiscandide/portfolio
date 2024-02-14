@@ -54,10 +54,12 @@ window.onload = function() {
         } else if (element) {
             var newScrollPosition = element.offsetTop;
         }
+        window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
 
-        setTimeout(function() {
-            window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
-        }, 1000);
+        window.addEventListener('scroll', function() {
+            console.log("Scrolling finished");
+            // Ajoutez ici le code que vous souhaitez exécuter après le défilement
+        });
     }
     setTimeout(function() {
         var url = window.location.href;
