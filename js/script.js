@@ -50,7 +50,7 @@ window.onload = function() {
         var element = document.querySelector(hash);
 
         if (element) {
-            var newScrollPosition = element.offsetTop;
+            var newScrollPosition = element.offsetTop -1000;
         }
 
         window.scrollTo(0, newScrollPosition);
