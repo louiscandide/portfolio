@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 window.onload = function() {
     var hash = window.location.hash;
-    
+
     if (hash) {
         var element = document.querySelector(hash);
 
@@ -55,6 +55,16 @@ window.onload = function() {
         }
 
     }
+
+    window.addEventListener('hashchange', function() {
+        var updatedHash = window.location.hash;
+        var updatedElement = document.querySelector(updatedHash);
+
+        if (updatedElement) {
+            var newScrollPosition = updatedElement.offsetTop;
+            window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
+        }
+    });
 
     setTimeout(function() {
         var url = window.location.href;
