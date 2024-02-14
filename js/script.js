@@ -54,7 +54,10 @@ window.onload = function() {
         } else if (element) {
             var newScrollPosition = element.offsetTop;
         }
-        window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
+
+        setTimeout(function() {
+            window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
+        }, 1000);
     }
     setTimeout(function() {
         var url = window.location.href;
