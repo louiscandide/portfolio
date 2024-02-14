@@ -55,11 +55,6 @@ window.onload = function() {
             var newScrollPosition = element.offsetTop;
         }
         window.scrollTo({ top: newScrollPosition, behavior: 'smooth' });
-
-        window.addEventListener('scroll', function() {
-            console.log("Scrolling finished");
-            // Ajoutez ici le code que vous souhaitez exécuter après le défilement
-        });
     }
     setTimeout(function() {
         var url = window.location.href;
