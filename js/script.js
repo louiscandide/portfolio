@@ -5,24 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var contactElement = document.getElementById('contact');
     var navLinks = document.querySelectorAll('nav a');
 
-    var downloadCV = false; // Variable pour suivre le téléchargement du CV
-
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
             event.preventDefault();
 
             var targetId = link.getAttribute('href').substring(1);
 
-            // Vérifiez si le lien cliqué est le lien de téléchargement du CV
-            if (link.getAttribute('href') === 'cv/cv_louis-candide_richard.pdf') {
-                downloadCV = true;
-                // Déclenchez le téléchargement
-                var downloadLink = document.createElement('a');
-                downloadLink.href = link.getAttribute('href');
-                downloadLink.download = 'cv_louis-candide_richard.pdf';
-                downloadLink.click();
-            } else {
-                // Sinon, effectuez le défilement fluide
+
                 if (targetId === homeElement.id) {
                     window.scrollTo(0, homeElement.offsetTop - 100);
                 } else if (targetId === aboutElement.id) {
@@ -33,11 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.scrollTo(0, contactElement.offsetTop);
                 }
 
-                // Réinitialisez la variable si le défilement fluide a été déclenché
-                if (!downloadCV) {
-                    downloadCV = false;
-                }
-            }
+    
         });
     });
 });
